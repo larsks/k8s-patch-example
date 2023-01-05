@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: lars-test-patcher
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["patch", "watch", "list", "get", "update"]
+  - apiGroups: ["apps"]
+    resources: ["deployments"]
+    verbs: ["patch", "watch", "list", "get", "update"]
